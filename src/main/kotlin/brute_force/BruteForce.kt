@@ -1,17 +1,25 @@
 package brute_force
 
-import java.util.StringJoiner
-
 fun main(args: Array<String>) {
+    //Test string patter matcher
     println(
         BruteForce.matchStringPattern(
             "I Love Programming and I do Programming",
             "and"
         )
     )
+
+    //Test two sum through bruteforce
+//    println(
+        BruteForce.twoSumUsingHashMap(intArrayOf(-4, 2,7,11,15), 11).forEach { print(it) }
+//    )
 }
 
 class BruteForce {
+
+    override fun toString(): String {
+        return BruteForce.toString()
+    }
 
     companion object {
         /**
@@ -49,6 +57,19 @@ class BruteForce {
                         return intArrayOf(first, second)
                     }
                 }
+            }
+            throw IllegalStateException("Not found")
+        }
+
+        fun twoSumUsingHashMap(nums: IntArray, target: Int): IntArray {
+            val result = hashMapOf<Int, Int>()
+            var diff: Int
+            for (i in nums.indices) {
+                diff = target - nums[i]
+                if (result.containsKey(diff)) {
+                    return intArrayOf(result[diff]!!, i)
+                }
+                result[nums[i]] = i
             }
             throw IllegalStateException("Not found")
         }
