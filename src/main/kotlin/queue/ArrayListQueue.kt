@@ -22,8 +22,13 @@ fun main() {
  * ADVANTAGES OF USING ARRAYLIST FOR QUEUE IMPLEMENTATION
  * Count and Peek run at O(1)
  * Enqueue runs at O(1) regardless the size of the list
- * Dequeue runs at O(n) since we have to resize the list to allocate
+ * Dequeue runs at O(n) since we have to shift all the elements to
+ * cover the empty space left after removing an element
+ *
+ * resize the list to allocate
  * new memory and copy the existing elements to the new list
+ *
+ * Space complexity of this approach is O(n)
  */
 class ArrayListQueue<T> : Queue<T> {
 
