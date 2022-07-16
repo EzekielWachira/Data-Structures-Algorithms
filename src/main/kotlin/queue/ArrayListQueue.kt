@@ -1,5 +1,7 @@
 package queue
 
+import queue.stack.reverse.reverse
+
 fun main() {
     val arrayListQueue = ArrayListQueue<String>()
     println("Queue with arrayList")
@@ -15,6 +17,8 @@ fun main() {
     arrayListQueue.dequeue()
     println(arrayListQueue)
     arrayListQueue.enqueue("Sunday")
+    println(arrayListQueue)
+    arrayListQueue.reverse()
     println(arrayListQueue)
 }
 
